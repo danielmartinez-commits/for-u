@@ -1,0 +1,16 @@
+const music=document.getElementById("music"),opening=document.getElementById("opening"),experience=document.getElementById("experience");
+document.getElementById("enterBtn").onclick=async()=>{try{await music.play()}catch(e){}opening.classList.add("hidden");experience.classList.add("visible");experience.setAttribute("aria-hidden","false");setTimeout(()=>document.querySelector(".hero-scene").scrollIntoView({behavior:"smooth"}),500)};
+document.getElementById("musicBtn").onclick=async()=>{if(music.paused)await music.play().catch(()=>{});else music.pause()};
+const observer=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("visible")),{threshold:.16});document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+const modal=document.getElementById("modal"),starModal=document.getElementById("starModal"),close=m=>{m.classList.remove("open");m.setAttribute("aria-hidden","true")};
+document.querySelectorAll(".possibility-card").forEach((c,i)=>c.onclick=()=>{document.getElementById("modalNumber").textContent=`02 · posibilidad 0${i+1}`;document.getElementById("modalTitle").textContent=c.dataset.title;document.getElementById("modalText").textContent=c.dataset.text;modal.classList.add("open")});
+document.getElementById("modalClose").onclick=()=>close(modal);modal.querySelector(".modal-backdrop").onclick=()=>close(modal);
+const msgs=["El próximo logro que vamos a celebrar.","Un lugar donde todavía no hemos estado.","Una foto que todavía no existe.","Una versión de ti que todavía no conozco.","Una versión de nosotros que todavía no imaginamos.","Un día que algún día recordaremos.","Una historia que todavía no hemos vivido."],stars=document.getElementById("stars");
+[[12,25],[25,70],[37,20],[48,78],[61,32],[73,65],[87,25]].forEach((p,i)=>{let s=document.createElement("button");s.className="star";s.style.left=p[0]+"%";s.style.top=p[1]+"%";s.style.animationDelay=i*.35+"s";s.onclick=()=>{document.getElementById("starText").textContent=msgs[i];starModal.classList.add("open")};stars.appendChild(s)});
+document.getElementById("starClose").onclick=()=>close(starModal);starModal.querySelector(".modal-backdrop").onclick=()=>close(starModal);
+const father=document.getElementById("father"),fa=document.getElementById("fatherAudio");
+document.getElementById("hearFather").onclick=()=>{father.classList.add("active");father.setAttribute("aria-hidden","false");setTimeout(()=>father.scrollIntoView({behavior:"smooth"}),80)};
+document.getElementById("skipFather").onclick=()=>document.querySelector(".question").scrollIntoView({behavior:"smooth"});
+document.getElementById("continueAfterFather").onclick=()=>{fa.pause();document.querySelector(".question").scrollIntoView({behavior:"smooth"})};
+document.querySelectorAll(".door").forEach(d=>d.onclick=()=>document.getElementById("doorAnswer").textContent=d.dataset.answer);
+document.onkeydown=e=>{if(e.key==="Escape"){close(modal);close(starModal)}};
