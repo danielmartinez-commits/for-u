@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Una experiencia para Juanjo.">
+  <title>Lo que todavía no sabemos · Juanjo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="fx fx-noise" aria-hidden="true"></div>
+  <div class="fx fx-vignette" aria-hidden="true"></div>
+  <div class="fx fx-light" aria-hidden="true"></div>
+
+  <div class="topbar">
+    <span class="brand">J · M</span>
+    <button id="musicToggle" class="music-toggle" type="button" aria-label="Activar música">
+      <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="music-label">sonido</span>
+    </button>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span id="progressFill"></span></div>
+
+  <main id="experience">
+    <!-- 00 -->
+    <section class="scene scene-intro" data-scene="intro">
+      <div class="intro-orbit" aria-hidden="true"></div>
+      <div class="intro-word intro-word-a">todavía</div>
+      <div class="intro-word intro-word-b">no</div>
+      <div class="intro-content">
+        <p class="micro reveal">para Juanjo</p>
+        <h1 class="display reveal">¿Y si lo mejor<br><em>todavía no ha pasado?</em></h1>
+        <button id="enterButton" class="enter-button reveal" type="button">
+          <span>Entra</span><span class="enter-arrow">↗</span>
+        </button>
+      </div>
+      <div class="intro-bottom">
+        <span>27 · 11 · 2026</span>
+        <span>01 / 10</span>
+      </div>
+    </section>
+
+    <!-- 01 -->
+    <section class="scene scene-future" data-scene="future">
+      <div class="scene-index">01</div>
+      <div class="future-grid">
+        <div class="future-heading">
+          <p class="micro">lo que viene</p>
+          <h2 class="display medium">Quiero hablarte<br>de todo lo que<br><em>aún no existe.</em></h2>
+        </div>
+        <div class="future-copy">
+          <p>De los casos que todavía no conoces.</p>
+          <p>De los lugares a los que todavía no has llegado.</p>
+          <p>De los sueños que algún día vas a mirar y decir: <em>“Lo logré.”</em></p>
+          <p>Y de todas las versiones de ti que todavía no conozco.</p>
+        </div>
+      </div>
+      <div class="future-mark" aria-hidden="true">∞</div>
+    </section>
+
+    <!-- 02 -->
+    <section class="scene scene-possibilities" data-scene="possibilities">
+      <div class="scene-index">02</div>
+      <div class="possibilities-intro">
+        <p class="micro">posibilidades</p>
+        <h2 class="display medium">Cuatro cosas<br><em>que todavía no sabemos.</em></h2>
+      </div>
+      <div class="possibility-stage">
+        <button class="possibility-item" type="button" data-title="El primer logro"
+          data-text="Ya cumpliste algunos sueños. Ya cruzaste algunas puertas. Ya llegaste a lugares que alguna vez imaginaste desde lejos. Y este apenas es uno de ellos.">
+          <span class="possibility-no">01</span><span class="possibility-name">El primer logro</span><span class="possibility-plus">+</span>
+        </button>
+        <button class="possibility-item" type="button" data-title="El abogado que vas a ser"
+          data-text="Porque tener un título es una cosa. Descubrir todo lo que puedes hacer con él es otra. Y tu esencia es tu mayor instrumento.">
+          <span class="possibility-no">02</span><span class="possibility-name">El abogado que vas a ser</span><span class="possibility-plus">+</span>
+        </button>
+        <button class="possibility-item" type="button" data-title="Una versión más grande de nosotros"
+          data-text="Más años. Más historias. Más lugares. Más cosas que todavía no sabemos nombrar.">
+          <span class="possibility-no">03</span><span class="possibility-name">Una versión más grande de nosotros</span><span class="possibility-plus">+</span>
+        </button>
+        <button class="possibility-item" type="button" data-title="Algo que todavía no podemos imaginar"
+          data-text="Porque quizás el futuro termine siendo mucho más bonito de lo que hoy podemos imaginar.">
+          <span class="possibility-no">04</span><span class="possibility-name">Algo que todavía no podemos imaginar</span><span class="possibility-plus">+</span>
+        </button>
+      </div>
+      <div class="possibility-detail" id="possibilityDetail" aria-hidden="true">
+        <button class="detail-close" type="button" aria-label="Cerrar">×</button>
+        <span id="detailNo"></span>
+        <h3 id="detailTitle"></h3>
+        <p id="detailText"></p>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="scene scene-promise" data-scene="promise">
+      <div class="scene-index">03</div>
+      <div class="promise-wrap">
+        <p class="micro">no prometo una historia perfecta</p>
+        <h2 class="display huge">No te prometo<br><em>saber qué viene.</em></h2>
+        <p class="promise-lead">Te prometo algo más interesante.</p>
+        <p class="promise-body">Una persona que quiere verte crecer. Que quiere celebrar contigo. Que quiere acompañarte cuando algo salga bien. Y también cuando algo no salga como esperabas.</p>
+        <p class="promise-end">Porque no quiero estar solamente en las fotos de los logros.<br><em>Quiero estar en el camino que lleva hasta ellos.</em></p>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="scene scene-letter" data-scene="letter">
+      <div class="scene-index">04</div>
+      <div class="letter-frame">
+        <div class="letter-meta"><span>una carta desde adelante</span><span>27 / 11 / 2026</span></div>
+        <h2 class="letter-title">Querido tú,<br><em>desde algún lugar que todavía no conocemos:</em></h2>
+        <div class="letter-columns">
+          <div>
+            <p>Espero que cuando leas esto ya hayas conseguido cosas que hoy todavía parecen lejanas.</p>
+            <p>Espero que hayas cambiado de planes. Que hayas tomado caminos inesperados. Que hayas conocido personas que te hayan enseñado algo. Que hayas tenido días difíciles y aun así hayas seguido.</p>
+            <p>Espero que algún día mires atrás y recuerdes este momento. El día en que dejaste atrás la universidad. El día en que pudiste decir: <strong>“Soy abogado.”</strong></p>
+          </div>
+          <div>
+            <p>Y espero que también recuerdes algo más. Yo llegué cuando este capítulo estaba a punto de terminar. No vi todo el camino. No vi cada madrugada. No vi cada examen. No vi todos los momentos que te hicieron llegar hasta aquí.</p>
+            <p>Pero tuve la suerte de encontrarte en el último capítulo. Y desde entonces hay algo que sí sé: <strong>quiero estar para los siguientes.</strong></p>
+            <p>Quiero conocer las versiones de ti que todavía no existen. Quiero celebrar tus próximos logros. Quiero verte cumplir cosas que hoy todavía parecen imposibles.</p>
+          </div>
+        </div>
+        <p class="letter-quote">“Mira todo lo que nos faltaba por vivir.”</p>
+      </div>
+    </section>
+
+    <!-- 05 -->
+    <section class="scene scene-today" data-scene="today">
+      <div class="scene-index">05</div>
+      <div class="today-date">27 · 11 · 2026</div>
+      <div class="today-content">
+        <p class="micro">hoy</p>
+        <h2 class="display giant">ABOGADO<span>.</span></h2>
+        <p>Hoy termina una etapa.<br>Y oficialmente comienza otra.</p>
+        <p class="today-secondary">Un título puede cerrar un camino.<br><em>Y también puede abrir todos los demás.</em></p>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section class="scene scene-stars" data-scene="stars">
+      <div class="scene-index">06</div>
+      <div class="stars-copy">
+        <p class="micro">todavía</p>
+        <h2 class="display medium">Hay cosas que aún<br>no sabemos <em>de nosotros.</em></h2>
+        <p>toca una estrella</p>
+      </div>
+      <div class="star-field" id="starField" aria-label="Estrellas interactivas"></div>
+      <div class="star-message" id="starMessage" aria-live="polite"></div>
+    </section>
+
+    <!-- MOMENTO APARTE -->
+    <section class="scene scene-father-intro" data-scene="father-intro">
+      <div class="father-intro-inner">
+        <p class="micro">hay algo que guardamos para ti</p>
+        <h2 class="display medium">Cuando estés listo.</h2>
+        <button id="fatherEnter" class="quiet-button" type="button">escucharlo <span>↗</span></button>
+      </div>
+    </section>
+
+    <section class="scene scene-father" data-scene="father">
+      <div class="father-aura" aria-hidden="true"></div>
+      <div class="father-inner">
+        <p class="micro">para Juanjo</p>
+        <div class="father-name">Papá</div>
+        <p class="father-line">Hay palabras que no necesitan ser explicadas.</p>
+        <audio id="fatherAudio" controls preload="metadata">
+          <source src="assets/papa.mp3" type="audio/mpeg">
+        </audio>
+        <p class="father-note">Escúchalo cuando estés listo.</p>
+        <button id="fatherContinue" class="quiet-button" type="button">seguir <span>→</span></button>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section class="scene scene-doors" data-scene="doors">
+      <div class="scene-index">07</div>
+      <div class="doors-heading">
+        <p class="micro">una pregunta</p>
+        <h2 class="display medium">¿Y si no pudiéramos<br><em>saber qué viene?</em></h2>
+        <p>Elige una puerta.</p>
+      </div>
+      <div class="door-field">
+        <button class="door" type="button" data-answer="Entonces espero que aprendamos a encontrar lo extraordinario dentro de lo tranquilo.">
+          <span>01</span><strong>Una vida tranquila</strong><i>↗</i>
+        </button>
+        <button class="door" type="button" data-answer="Entonces espero que nunca nos dé miedo soñar demasiado grande.">
+          <span>02</span><strong>Una vida extraordinaria</strong><i>↗</i>
+        </button>
+        <button class="door" type="button" data-answer="Entonces qué suerte que ninguno de los dos pueda ver el final.">
+          <span>03</span><strong>Una vida que no podamos predecir</strong><i>↗</i>
+        </button>
+      </div>
+      <div class="door-answer" id="doorAnswer" aria-live="polite"></div>
+    </section>
+
+    <!-- 08 -->
+    <section class="scene scene-then" data-scene="then">
+      <div class="scene-index">08</div>
+      <div class="then-content">
+        <p class="micro">entonces</p>
+        <h2 class="display huge">Sea cual sea<br><em>la puerta...</em></h2>
+        <div class="then-body">
+          <p>Espero estar ahí.</p>
+          <p>Para verte entrar. Para escucharte decir: <strong>“Lo logré.”</strong></p>
+          <p>Para abrazarte cuando algo salga mal. Para celebrar cuando salga bien. Para conocer contigo todos esos lugares que todavía no conocemos.</p>
+          <p class="then-final">No necesito saber exactamente dónde vamos.<br><em>Me basta saber con quién quiero caminar.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 -->
+    <section class="scene scene-gift" data-scene="gift">
+      <div class="scene-index">09</div>
+      <div class="gift-content">
+        <p class="micro">el verdadero regalo</p>
+        <h2 class="display medium">No hice esto solamente<br>para celebrar que te graduaste.</h2>
+        <div class="gift-copy">
+          <p>Lo hice para recordarte algo.</p>
+          <p>Que este 27 no es solamente el día en que te conviertes en abogado.</p>
+          <p>Es uno de los primeros días de todo lo que viene.</p>
+          <p>Y quizás dentro de unos años tengamos otro logro que celebrar. Y después otro. Y otro. Y otro.</p>
+          <p class="gift-end"><em>Y espero poder mirar hacia atrás y pensar:<br>“Yo estuve ahí.”</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EPILOGUE -->
+    <section class="scene scene-final" data-scene="final">
+      <div class="final-glow" aria-hidden="true"></div>
+      <div class="final-content">
+        <p>Esto no es el final.</p>
+        <h2 class="display medium">Es solamente el primero<br>de muchos <em>“lo logramos”.</em></h2>
+        <div class="final-date">27.11.2026</div>
+        <div class="final-signature">Con amor,<br><strong>Mariangel</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="reducedModal" hidden>
+    <div class="modal-inner"></div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
